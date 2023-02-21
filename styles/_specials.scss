@@ -1,0 +1,16 @@
+@function remSize ($size) {
+  @return calc($size / 16);
+}
+
+@mixin translate-animation($name, $translateFn1, $translateFn2, $time: 2s, $delay: 0.7s){
+  animation: $name $time ease-in-out $delay;
+
+    @keyframes #{$name} {
+      0% {
+        transform: $translateFn1;
+      }
+      100% {
+        transform: $translateFn2;
+      }
+    }
+}

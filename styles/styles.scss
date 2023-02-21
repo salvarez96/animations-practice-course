@@ -1,3 +1,5 @@
+@use "specials" as fns;
+
 :root {
   --yellow: #FFD602;
   --blue: #016FB9;
@@ -5,10 +7,6 @@
   --font-light: 100;
   --font-normal: 300;
   --font-bold: 700;
-}
-
-@function remSize ($size) {
-  @return calc($size / 16);
 }
 
 * {
@@ -53,16 +51,7 @@ header {
     height: 100%;
     margin-left: 80px;
 
-    animation: navbar 2s ease-in-out 0.7s;
-
-    @keyframes navbar {
-      0% {
-        transform: translateY(-100%);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
+    @include fns.translate-animation(navbar, translateY(-100%), translateY(0));
     
     & img {
       width: 50px;
@@ -72,7 +61,7 @@ header {
   & ul li {
     display: inline-block;
     list-style: none;
-    margin-left: remSize(20rem);
+    margin-left: fns.remSize(20rem);
     
     & a {
       display: block;
@@ -147,34 +136,25 @@ header {
   justify-content: center;
   padding-left: 80px;
 
-  animation: main-content 2s ease-in-out 0.7s;
-
-  @keyframes main-content {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+  @include fns.translate-animation(main-content, translateX(-100%), translateX(0));
 
   h1 {
     display: flex;
     flex-direction: column;
-    font-size: remSize(48rem);
+    font-size: fns.remSize(48rem);
   }
 
   .not-bold {
     position: relative;
-    top: remSize(14rem);
+    top: fns.remSize(14rem);
     margin-left: 40px;
-    font-size: remSize(36rem);
+    font-size: fns.remSize(36rem);
     font-weight: var(--font-normal);
   }
 
   p {
     width: 60%;
-    margin-top: remSize(30rem);
+    margin-top: fns.remSize(30rem);
     font-weight: var(--font-light);
   }
 }
