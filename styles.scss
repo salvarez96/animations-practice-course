@@ -1,3 +1,12 @@
+:root {
+  --yellow: #FFD602;
+  --blue: #016FB9;
+  --red: #FF0000;
+  --font-light: 100;
+  --font-normal: 300;
+  --font-bold: 700;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +16,7 @@
 body {
   height: 100vh;
   overflow: hidden;
+  font-family: 'Lato', sans-serif;
 }
 
 .page {
@@ -15,7 +25,21 @@ body {
 }
 
 .content {
+  height: 100%;
   position: absolute;
+
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 20% 50% 30%;
+  grid-template-areas: 
+    "nav aside"
+    "section aside"
+    "footer aside"
+  ;
+}
+
+header {
+  grid-area: nav;
 }
 
 .loader {
@@ -37,7 +61,7 @@ body {
     border-radius: 50%;
     margin: 10px auto;
     transform: scale(0);
-    
+
     animation: scaling 2s ease-in-out infinite;
 
     &:nth-child(2) {
@@ -67,4 +91,16 @@ body {
   50% {
     transform: scale(0.8);
   }
+}
+
+.main-content {
+  grid-area: section;
+}
+
+.side-content {
+  grid-area: aside;
+}
+
+footer{
+  grid-area: footer;
 }
