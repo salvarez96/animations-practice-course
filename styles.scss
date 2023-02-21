@@ -71,8 +71,16 @@ header {
     margin-left: 20px;
     
     & a {
+      display: block;
       color: var(--red);
       text-decoration: none;
+
+      transition: all 0.2s ease-in-out;
+      
+      &:hover {
+        transform: scale(1.03);
+        text-decoration: underline;
+      }
     }
   }
 }

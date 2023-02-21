@@ -62,8 +62,14 @@ header ul li {
   margin-left: 20px;
 }
 header ul li a {
+  display: block;
   color: var(--red);
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+header ul li a:hover {
+  transform: scale(1.03);
+  text-decoration: underline;
 }
 
 .loader {
