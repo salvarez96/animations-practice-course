@@ -7,6 +7,10 @@
   --font-bold: 700;
 }
 
+@function remSize ($size) {
+  @return calc($size / 16);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -68,7 +72,7 @@ header {
   & ul li {
     display: inline-block;
     list-style: none;
-    margin-left: 20px;
+    margin-left: remSize(20rem);
     
     & a {
       display: block;
@@ -157,20 +161,20 @@ header {
   h1 {
     display: flex;
     flex-direction: column;
-    font-size: 48px;
+    font-size: remSize(48rem);
   }
 
   .not-bold {
     position: relative;
-    top: 14px;
+    top: remSize(14rem);
     margin-left: 40px;
-    font-size: 36px;
+    font-size: remSize(36rem);
     font-weight: var(--font-normal);
   }
 
   p {
     width: 60%;
-    margin-top: 30px;
+    margin-top: remSize(30rem);
     font-weight: var(--font-light);
   }
 }

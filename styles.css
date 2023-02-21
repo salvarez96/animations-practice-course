@@ -59,7 +59,7 @@ header nav img {
 header ul li {
   display: inline-block;
   list-style: none;
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 header ul li a {
   display: block;
@@ -136,18 +136,18 @@ header ul li a:hover {
 .main-content h1 {
   display: flex;
   flex-direction: column;
-  font-size: 48px;
+  font-size: 3rem;
 }
 .main-content .not-bold {
   position: relative;
-  top: 14px;
+  top: 0.875rem;
   margin-left: 40px;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: var(--font-normal);
 }
 .main-content p {
   width: 60%;
-  margin-top: 30px;
+  margin-top: 1.875rem;
   font-weight: var(--font-light);
 }
 
