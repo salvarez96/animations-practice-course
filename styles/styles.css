@@ -322,10 +322,30 @@ footer .btn:hover img {
   height: 50vh;
   width: 40%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   background-color: white;
+  padding: 1.875rem 0;
+}
+.modal__content input[type=radio] {
+  display: none;
+}
+.modal__content .figures {
+  width: 300px;
+  height: 200px;
+  overflow: visible;
+}
+.modal__content .figures label {
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  background-color: var(--yellow);
+}
+.modal__content .figures label img {
+  width: 90%;
+  margin: 0 auto;
 }
 .modal__content button {
   font-family: inherit;
