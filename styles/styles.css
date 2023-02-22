@@ -5,6 +5,7 @@
   --font-light: 100;
   --font-normal: 300;
   --font-bold: 700;
+  --delay: 2s;
 }
 
 * {
@@ -43,7 +44,10 @@ header nav {
   align-items: center;
   height: 100%;
   margin-left: 80px;
-  animation: navbar 2s ease-in-out 0.7s;
+  animation-name: navbar;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.7s;
 }
 @keyframes navbar {
   0% {
@@ -81,7 +85,7 @@ header ul li a:hover {
   position: absolute;
   z-index: 3;
   background-color: white;
-  animation: loader 0s linear forwards;
+  animation: loader 1.5s linear forwards;
 }
 @keyframes loader {
   0%, 90% {
@@ -100,7 +104,7 @@ header ul li a:hover {
   border-radius: 50%;
   margin: 10px auto;
   transform: scale(0);
-  animation: scaling 2s ease-in-out infinite;
+  animation: scaling var(--delay) ease-in-out infinite;
 }
 .loader div:nth-child(2) {
   animation-delay: 0.2s;
@@ -123,7 +127,10 @@ header ul li a:hover {
   flex-direction: column;
   justify-content: center;
   padding-left: 80px;
-  animation: main-content 2s ease-in-out 0.7s;
+  animation-name: main-content;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.7s;
 }
 @keyframes main-content {
   0% {
@@ -153,6 +160,56 @@ header ul li a:hover {
 
 .side-content {
   grid-area: aside;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  position: relative;
+}
+.side-content p {
+  font-size: 2.25rem;
+  transform: scale(0) rotate(270deg);
+  animation-name: superman-font;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+}
+@keyframes superman-font {
+  0% {
+    transform: scale(0) rotate(270deg);
+  }
+  100% {
+    transform: scale(1) rotate(270deg);
+  }
+}
+.side-content img {
+  width: 100%;
+  padding: 20px;
+  grid-column: 2/6;
+  position: absolute;
+  z-index: 1;
+  transform: translateY(300%);
+  animation-name: superman-img;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: var(--delay);
+  animation-timing-function: cubic-bezier(0.21, -0.04, 0.41, 1.52);
+  animation-fill-mode: forwards;
+}
+@keyframes superman-img {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.side-content .side-content__color {
+  width: 100%;
+  height: 100%;
+  background-color: var(--yellow);
+  grid-column: 4/7;
+  z-index: 0;
 }
 
 footer {

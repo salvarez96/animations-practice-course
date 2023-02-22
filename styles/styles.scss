@@ -7,6 +7,7 @@
   --font-light: 100;
   --font-normal: 300;
   --font-bold: 700;
+  --delay: 2s;
 }
 
 * {
@@ -88,7 +89,7 @@ header {
   z-index: 3;
   background-color: white;
 
-  animation: loader 0s linear forwards;
+  animation: loader 1.5s linear forwards;
 
   @keyframes loader {
     0%, 90% {
@@ -109,7 +110,7 @@ header {
     margin: 10px auto;
     transform: scale(0);
     
-    animation: scaling 2s ease-in-out infinite;
+    animation: scaling var(--delay) ease-in-out infinite;
     
     &:nth-child(2) {
       animation-delay: 0.2s;
@@ -161,6 +162,57 @@ header {
 
 .side-content {
   grid-area: aside;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
+  position: relative;
+
+  p {
+    $transform: scale(0) rotate(270deg);
+
+    font-size: fns.remSize(36rem);
+    transform: $transform;
+    
+    @include fns.translate-animation(
+      superman-font, 
+      $transform, 
+      scale(1) rotate(270deg), 
+      1s, 
+      var(--delay), 
+    );
+
+    animation-fill-mode: forwards;
+  }
+  
+  img {
+    $translate: translateY(300%);
+
+    width: 100%;
+    padding: 20px;
+    grid-column: 2/6;
+    position: absolute;
+    z-index: 1;
+    transform: $translate;
+    
+    @include fns.translate-animation(
+      superman-img, 
+      $translate, 
+      translateY(0), 
+      1s, 
+      var(--delay)
+    );
+    
+    animation-timing-function: cubic-bezier(0.21,-0.04, 0.41, 1.52);
+    animation-fill-mode: forwards;
+  }
+  
+  .side-content__color {
+    width: 100%;
+    height: 100%;
+    background-color: var(--yellow);
+    grid-column: 4/7;
+    z-index: 0;
+  }
 }
 
 footer {
