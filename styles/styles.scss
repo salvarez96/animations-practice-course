@@ -103,7 +103,7 @@ header {
   }
   
   & div {
-    background-color: lightgreen;
+    background-color: var(--yellow);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -216,5 +216,60 @@ header {
 }
 
 footer {
+  $translate: translateY(300%);
+  $duration: 0.75s;
+
   grid-area: footer;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--yellow);
+  border-top-right-radius: 80px;
+  transform: $translate;
+  
+  @include fns.translate-animation(footer, $translate, translateY(0), 1s, 1.5s);
+  animation-fill-mode: forwards;
+  
+  & div:nth-child(1) {
+    transform: $translate;
+    @include fns.translate-animation(footer, $translate, translateY(0), $duration, 2.5s);
+    animation-fill-mode: forwards;
+  }
+  & div:nth-child(2) {
+    transform: $translate;
+    @include fns.translate-animation(footer, $translate, translateY(0), $duration, 3s);
+    animation-fill-mode: forwards;
+  }
+  & div:nth-child(3) {
+    transform: $translate;
+    @include fns.translate-animation(footer, $translate, translateY(0), $duration, 3.5s);
+    animation-fill-mode: forwards;
+  }
+
+  .btn {
+    width: 130px;
+    height: 55%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--blue);
+    align-self: flex-end;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    img {
+      width: 120%;
+      position: absolute;
+      bottom: 50px;
+
+      transform: scale(1) translateY(0);
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    &:hover img {
+      cursor: pointer;
+      transform: scale(1.15) translateY(-15%);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
 }

@@ -98,7 +98,7 @@ header ul li a:hover {
   }
 }
 .loader div {
-  background-color: lightgreen;
+  background-color: var(--yellow);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -214,4 +214,94 @@ header ul li a:hover {
 
 footer {
   grid-area: footer;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--yellow);
+  border-top-right-radius: 80px;
+  transform: translateY(300%);
+  animation-name: footer;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes footer {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+footer div:nth-child(1) {
+  transform: translateY(300%);
+  animation-name: footer;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes footer {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+footer div:nth-child(2) {
+  transform: translateY(300%);
+  animation-name: footer;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes footer {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+footer div:nth-child(3) {
+  transform: translateY(300%);
+  animation-name: footer;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes footer {
+  0% {
+    transform: translateY(300%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+footer .btn {
+  width: 130px;
+  height: 55%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: var(--blue);
+  align-self: flex-end;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+footer .btn img {
+  width: 120%;
+  position: absolute;
+  bottom: 50px;
+  transform: scale(1) translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+footer .btn:hover img {
+  cursor: pointer;
+  transform: scale(1.15) translateY(-15%);
+  transition: transform 0.3s ease-in-out;
 }/*# sourceMappingURL=styles.css.map */
