@@ -321,6 +321,7 @@ footer .btn:hover img {
 .modal__content {
   height: 50vh;
   width: 40%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -328,6 +329,18 @@ footer .btn:hover img {
   border-radius: 20px;
   background-color: white;
   padding: 1.875rem 0;
+}
+.modal__content .close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  margin: 10px;
+  transition: 0.2s transform ease-in-out;
+}
+.modal__content .close-modal:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .modal__content input[type=radio] {
   display: none;
