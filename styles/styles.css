@@ -362,10 +362,32 @@ footer .btn:hover img {
   place-items: center;
   border-radius: 10px;
   background-color: var(--yellow);
+  transition: transform 0.5s ease;
 }
 .modal__content .cards .card img {
   width: 90%;
   margin: 0 auto;
+}
+.modal__content #radio-1:checked ~ .cards #card-1,
+.modal__content #radio-2:checked ~ .cards #card-2,
+.modal__content #radio-3:checked ~ .cards #card-3 {
+  transform: translate(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+.modal__content #radio-1:checked ~ .cards #card-2,
+.modal__content #radio-2:checked ~ .cards #card-3,
+.modal__content #radio-3:checked ~ .cards #card-1 {
+  transform: translate(40%) scale(0.8);
+  opacity: 0.5;
+  z-index: 0;
+}
+.modal__content #radio-1:checked ~ .cards #card-3,
+.modal__content #radio-2:checked ~ .cards #card-1,
+.modal__content #radio-3:checked ~ .cards #card-2 {
+  transform: translate(-40%) scale(0.8);
+  opacity: 0.5;
+  z-index: 0;
 }
 .modal__content button {
   font-family: inherit;

@@ -10,13 +10,19 @@ modalContent.classList.add('modal__content');
 
 modalContent.innerHTML = `
   <img class="close-modal" onclick="removeModal()" src="/public/icons8-macos-close-32.png" alt="close modal icon" />
-  <input type="radio" name="figure-selection" id="box-1">
-  <input type="radio" name="figure-selection" id="box-2">
-  <input type="radio" name="figure-selection" id="box-3">
+  <input type="radio" name="figure-selection" id="radio-1">
+  <input type="radio" name="figure-selection" id="radio-2">
+  <input type="radio" name="figure-selection" id="radio-3">
   <div class="cards">
-    <label class="card" for="box-1"><img src="/public/spiderman.png" alt="Spiderman" /></label>
-    <label class="card" for="box-2"><img src="/public/robin.png" alt="Robin" /></label>
-    <label class="card" for="box-3"><img src="/public/batman.png" alt="Batman" /></label>
+    <label class="card" for="radio-1" id="card-1">
+      <img src="/public/spiderman.png" alt="Spiderman" />
+    </label>
+    <label class="card" for="radio-2" id="card-2">
+      <img src="/public/robin.png" alt="Robin" />
+    </label>
+    <label class="card" for="radio-3" id="card-3">
+      <img src="/public/batman.png" alt="Batman" />
+    </label>
   </div>
 `
 modalContent.appendChild(modalButton);

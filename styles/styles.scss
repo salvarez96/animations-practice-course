@@ -323,7 +323,7 @@ footer {
     position: relative;
     margin-bottom: 40px;
     transform-style: preserve-3d;
-
+    
     .card {
       height: 100%;
       width: 50%;
@@ -334,12 +334,36 @@ footer {
       border-radius: 10px;
       background-color: var(--yellow);
 
+      transition: transform 0.5s ease;
+
       & img {
         // height: 100%;
         width: 90%;
         margin: 0 auto;
       }
     }
+  }
+
+  #radio-1:checked ~ .cards #card-1, 
+  #radio-2:checked ~ .cards #card-2, 
+  #radio-3:checked ~ .cards #card-3 {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
+  #radio-1:checked ~ .cards #card-2, 
+  #radio-2:checked ~ .cards #card-3, 
+  #radio-3:checked ~ .cards #card-1 {
+    transform: translate(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  #radio-1:checked ~ .cards #card-3, 
+  #radio-2:checked ~ .cards #card-1, 
+  #radio-3:checked ~ .cards #card-2 {
+    transform: translate(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
   }
 
   button {
