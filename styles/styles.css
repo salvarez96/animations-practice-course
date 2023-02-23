@@ -190,10 +190,10 @@ header ul li a:hover {
   z-index: 1;
   transform: translateY(300%);
   animation-name: superman-img;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-delay: var(--delay);
-  animation-timing-function: cubic-bezier(0.21, -0.04, 0.41, 1.52);
+  animation-timing-function: cubic-bezier(0.49, 0.13, 0, 1.39);
   animation-fill-mode: forwards;
 }
 @keyframes superman-img {
@@ -313,9 +313,19 @@ footer .btn:hover img {
   display: grid;
   place-items: center;
   z-index: 1;
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
-  background-color: rgba(0, 0, 0, 0.3);
+  animation: modal 0.4s ease-in-out forwards;
+}
+@keyframes modal {
+  from {
+    -webkit-backdrop-filter: blur(0);
+            backdrop-filter: blur(0);
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    -webkit-backdrop-filter: blur(1px);
+            backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .modal__content {
@@ -330,6 +340,15 @@ footer .btn:hover img {
   border-radius: 20px;
   background-color: white;
   padding: 1.875rem 0;
+  animation: modal-content 0.6s ease-in-out forwards;
+}
+@keyframes modal-content {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 .modal__content .close-modal {
   position: absolute;
@@ -379,20 +398,20 @@ footer .btn:hover img {
 .modal__content #radio-1:checked ~ .cards #card-2,
 .modal__content #radio-2:checked ~ .cards #card-3,
 .modal__content #radio-3:checked ~ .cards #card-1 {
-  transform: translate(40%) scale(0.8);
+  transform: translate(50%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .modal__content #radio-1:checked ~ .cards #card-3,
 .modal__content #radio-2:checked ~ .cards #card-1,
 .modal__content #radio-3:checked ~ .cards #card-2 {
-  transform: translate(-40%) scale(0.8);
+  transform: translate(-50%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .modal__content button {
   font-family: inherit;
-  padding: 20px 1.25rem;
+  padding: 1.25rem 40px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
