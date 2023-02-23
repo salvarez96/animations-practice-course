@@ -43,9 +43,23 @@ modal.appendChild(modalContent);
 
 modal.addEventListener('click', removeModal);
 
+const modalContentChildren = [...modalContent.childNodes];
+
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     page.append(modal);
-    modalContent.focus();
+    switch (button.id) {
+      case 'btn1':
+        modalContentChildren.find(item => item.id === 'radio-1').checked = true;
+        break;
+      case 'btn2':
+        modalContentChildren.find(item => item.id === 'radio-2').checked = true;
+        break;
+      case 'btn3':
+        modalContentChildren.find(item => item.id === 'radio-3').checked = true;
+        break;
+    }
   });
 });
+
+console.log(modalContent);

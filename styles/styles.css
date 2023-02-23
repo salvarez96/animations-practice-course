@@ -362,6 +362,7 @@ footer .btn:hover img {
   place-items: center;
   border-radius: 10px;
   background-color: var(--yellow);
+  cursor: pointer;
   transition: transform 0.5s ease;
 }
 .modal__content .cards .card img {
