@@ -61,5 +61,3 @@ buttons.forEach(button => {
     }
   });
 });
-
-console.log(modalContent);
