@@ -13,10 +13,10 @@ modalContent.innerHTML = `
   <input type="radio" name="figure-selection" id="box-1">
   <input type="radio" name="figure-selection" id="box-2">
   <input type="radio" name="figure-selection" id="box-3">
-  <div class="figures">
-    <label for="box-1"><img src="/public/spiderman.png" alt="Spiderman" /></label>
-    <label for="box-2"><img src="/public/robin.png" alt="Robin" /></label>
-    <label for="box-3"><img src="/public/batman.png" alt="Batman" /></label>
+  <div class="cards">
+    <label class="card" for="box-1"><img src="/public/spiderman.png" alt="Spiderman" /></label>
+    <label class="card" for="box-2"><img src="/public/robin.png" alt="Robin" /></label>
+    <label class="card" for="box-3"><img src="/public/batman.png" alt="Batman" /></label>
   </div>
 `
 modalContent.appendChild(modalButton);

@@ -286,8 +286,9 @@ footer {
 }
 
 .modal__content {
-  height: 50vh;
-  width: 40%;
+  height: 45vh;
+  width: 35%;
+  min-width: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -316,15 +317,21 @@ footer {
     display: none;
   }
 
-  .figures {
+  .cards {
     width: 300px;
     height: 200px;
-    overflow: visible;
+    position: relative;
+    margin-bottom: 40px;
+    transform-style: preserve-3d;
 
-    & label {
+    .card {
       height: 100%;
       width: 50%;
-      display: inline-block;
+      position: absolute;
+      left: 25%;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
       background-color: var(--yellow);
 
       & img {
@@ -345,5 +352,11 @@ footer {
     color: white;
     font-size: fns.remSize(20rem);
     font-weight: var(--font-bold);
+
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
